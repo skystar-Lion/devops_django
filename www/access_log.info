@@ -1,0 +1,362 @@
+INFO:root:create database connection pools...
+INFO:root:init jinja2..
+INFO:root:set jinja2 templates path: /home/skystar/devops/devops_django/www/template
+INFO:root:add routes:handlers
+INFO:root:found model: User (tables: users)
+INFO:root:found mapping: id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: email ==> <StringField, varchar(50):None>
+INFO:root:found mapping: passwd ==> <StringField, varchar(50):None>
+INFO:root:found mapping: admin ==> <BooleanField, boolean:None>
+INFO:root:found mapping: name ==> <StringField, varchar(50):None>
+INFO:root:found mapping: image ==> <StringField, varchar(500):None>
+INFO:root:found mapping: create_at ==> <FloatField, real:None>
+INFO:root:found model: Blog (tables: blogs)
+INFO:root:found mapping: id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_name ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_image ==> <StringField, varchar(500):None>
+INFO:root:found mapping: name ==> <StringField, varchar(50):None>
+INFO:root:found mapping: summary ==> <StringField, varchar(200):None>
+INFO:root:found mapping: context ==> <TextField, text:None>
+INFO:root:found mapping: create_at ==> <FloatField, real:None>
+INFO:root:found model: Comment (tables: comments)
+INFO:root:found mapping: id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: blog_id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_name ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_image ==> <StringField, varchar(500):None>
+INFO:root:found mapping: context ==> <TextField, text:None>
+INFO:root:found mapping: create_at ==> <FloatField, real:None>
+INFO:root:add route POST /api/blogs =>api_create_blog(request name summary content)
+INFO:root:add route GET /api/blogs/{id} =>api_get_blog(id)
+INFO:root:add route POST /api/users =>api_register_user(email name passwd)
+INFO:root:add route POST /api/authenticate =>authenticate(email passwd)
+INFO:root:add route GET /blog/{id} =>get_blog(id)
+INFO:root:add route GET /index/ =>hello(request)
+INFO:root:add route GET / =>index(request)
+INFO:root:add route GET /manager/blogs/create =>manage_create_blog()
+INFO:root:add route GET /register =>register()
+INFO:root:add route GET /signin =>signin()
+INFO:root:add route GET /signout =>signout(request)
+INFO:root:add static static => /home/skystar/devops/devops_django/www/static
+INFO:root:server start at http://192.168.1.107:8888
+INFO:root:received request: GET /manager/blogs/create
+INFO:root:response handler:
+INFO:root:call with args: {}
+INFO:aiohttp.access:192.168.1.107 [12/Oct/2019:09:47:04 +0000] "GET /manager/blogs/create HTTP/1.1" 200 6373 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0"
+INFO:root:create database connection pools...
+INFO:root:init jinja2..
+INFO:root:set jinja2 templates path: /home/skystar/devops/devops_django/www/template
+INFO:root:add routes:handlers
+INFO:root:found model: User (tables: users)
+INFO:root:found mapping: id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: email ==> <StringField, varchar(50):None>
+INFO:root:found mapping: passwd ==> <StringField, varchar(50):None>
+INFO:root:found mapping: admin ==> <BooleanField, boolean:None>
+INFO:root:found mapping: name ==> <StringField, varchar(50):None>
+INFO:root:found mapping: image ==> <StringField, varchar(500):None>
+INFO:root:found mapping: create_at ==> <FloatField, real:None>
+INFO:root:found model: Blog (tables: blogs)
+INFO:root:found mapping: id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_name ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_image ==> <StringField, varchar(500):None>
+INFO:root:found mapping: name ==> <StringField, varchar(50):None>
+INFO:root:found mapping: summary ==> <StringField, varchar(200):None>
+INFO:root:found mapping: context ==> <TextField, text:None>
+INFO:root:found mapping: create_at ==> <FloatField, real:None>
+INFO:root:found model: Comment (tables: comments)
+INFO:root:found mapping: id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: blog_id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_name ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_image ==> <StringField, varchar(500):None>
+INFO:root:found mapping: context ==> <TextField, text:None>
+INFO:root:found mapping: create_at ==> <FloatField, real:None>
+INFO:root:add route POST /api/blogs =>api_create_blog(request name summary content)
+INFO:root:add route GET /api/blogs/{id} =>api_get_blog(id)
+INFO:root:add route POST /api/users =>api_register_user(email name passwd)
+INFO:root:add route POST /api/authenticate =>authenticate(email passwd)
+INFO:root:add route GET /blog/{id} =>get_blog(id)
+INFO:root:add route GET /index/ =>hello(request)
+INFO:root:add route GET / =>index(request)
+INFO:root:add route GET /manager/blogs/create =>manage_create_blog()
+INFO:root:add route GET /register =>register()
+INFO:root:add route GET /signin =>signin()
+INFO:root:add route GET /signout =>signout(request)
+INFO:root:add static static => /home/skystar/devops/devops_django/www/static
+INFO:root:server start at http://192.168.1.107:8888
+Traceback (most recent call last):
+  File "/home/skystar/devops/devops_django/www/app.py", line 15, in <module>
+    logging.basicConfig(level=logging.INFO, filename='access_log.info')
+  File "/usr/local/lib/python3.7/logging/__init__.py", line 1895, in basicConfig
+    h = FileHandler(filename, mode)
+  File "/usr/local/lib/python3.7/logging/__init__.py", line 1087, in __init__
+    StreamHandler.__init__(self, self._open())
+  File "/usr/local/lib/python3.7/logging/__init__.py", line 1116, in _open
+    return open(self.baseFilename, self.mode, encoding=self.encoding)
+PermissionError: [Errno 13] Permission denied: '/access_log.info'
+Traceback (most recent call last):
+  File "/home/skystar/devops/devops_django/www/app.py", line 15, in <module>
+    logging.basicConfig(level=logging.INFO, filename='access_log.info')
+  File "/usr/local/lib/python3.7/logging/__init__.py", line 1895, in basicConfig
+    h = FileHandler(filename, mode)
+  File "/usr/local/lib/python3.7/logging/__init__.py", line 1087, in __init__
+    StreamHandler.__init__(self, self._open())
+  File "/usr/local/lib/python3.7/logging/__init__.py", line 1116, in _open
+    return open(self.baseFilename, self.mode, encoding=self.encoding)
+PermissionError: [Errno 13] Permission denied: '/access_log.info'
+Traceback (most recent call last):
+  File "/home/skystar/devops/devops_django/www/app.py", line 15, in <module>
+    logging.basicConfig(level=logging.INFO, filename='access_log.info')
+  File "/usr/local/lib/python3.7/logging/__init__.py", line 1895, in basicConfig
+    h = FileHandler(filename, mode)
+  File "/usr/local/lib/python3.7/logging/__init__.py", line 1087, in __init__
+    StreamHandler.__init__(self, self._open())
+  File "/usr/local/lib/python3.7/logging/__init__.py", line 1116, in _open
+    return open(self.baseFilename, self.mode, encoding=self.encoding)
+PermissionError: [Errno 13] Permission denied: '/access_log.info'
+Traceback (most recent call last):
+  File "/home/skystar/devops/devops_django/www/app.py", line 15, in <module>
+    logging.basicConfig(level=logging.INFO, filename='access_log.info')
+  File "/usr/local/lib/python3.7/logging/__init__.py", line 1895, in basicConfig
+    h = FileHandler(filename, mode)
+  File "/usr/local/lib/python3.7/logging/__init__.py", line 1087, in __init__
+    StreamHandler.__init__(self, self._open())
+  File "/usr/local/lib/python3.7/logging/__init__.py", line 1116, in _open
+    return open(self.baseFilename, self.mode, encoding=self.encoding)
+PermissionError: [Errno 13] Permission denied: '/access_log.info'
+INFO:root:create database connection pools...
+INFO:root:init jinja2..
+INFO:root:set jinja2 templates path: /home/skystar/devops/devops_django/www/template
+INFO:root:add routes:handlers
+INFO:root:found model: User (tables: users)
+INFO:root:found mapping: id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: email ==> <StringField, varchar(50):None>
+INFO:root:found mapping: passwd ==> <StringField, varchar(50):None>
+INFO:root:found mapping: admin ==> <BooleanField, boolean:None>
+INFO:root:found mapping: name ==> <StringField, varchar(50):None>
+INFO:root:found mapping: image ==> <StringField, varchar(500):None>
+INFO:root:found mapping: create_at ==> <FloatField, real:None>
+INFO:root:found model: Blog (tables: blogs)
+INFO:root:found mapping: id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_name ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_image ==> <StringField, varchar(500):None>
+INFO:root:found mapping: name ==> <StringField, varchar(50):None>
+INFO:root:found mapping: summary ==> <StringField, varchar(200):None>
+INFO:root:found mapping: context ==> <TextField, text:None>
+INFO:root:found mapping: create_at ==> <FloatField, real:None>
+INFO:root:found model: Comment (tables: comments)
+INFO:root:found mapping: id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: blog_id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_name ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_image ==> <StringField, varchar(500):None>
+INFO:root:found mapping: context ==> <TextField, text:None>
+INFO:root:found mapping: create_at ==> <FloatField, real:None>
+INFO:root:add route POST /api/blogs =>api_create_blog(request name summary content)
+INFO:root:add route GET /api/blogs/{id} =>api_get_blog(id)
+INFO:root:add route POST /api/users =>api_register_user(email name passwd)
+INFO:root:add route POST /api/authenticate =>authenticate(email passwd)
+INFO:root:add route GET /blog/{id} =>get_blog(id)
+INFO:root:add route GET /index/ =>hello(request)
+INFO:root:add route GET / =>index(request)
+INFO:root:add route GET /manager/blogs/create =>manage_create_blog()
+INFO:root:add route GET /register =>register()
+INFO:root:add route GET /signin =>signin()
+INFO:root:add route GET /signout =>signout(request)
+INFO:root:add static static => /home/skystar/devops/devops_django/www/static
+INFO:root:server start at http://192.168.1.107:8888
+INFO:root:received request: GET /register
+INFO:root:response handler:
+INFO:root:call with args: {}
+INFO:aiohttp.access:192.168.1.107 [12/Oct/2019:10:38:29 +0000] "GET /register HTTP/1.1" 200 6692 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0"
+INFO:root:received request: GET /register
+INFO:root:response handler:
+INFO:root:call with args: {}
+INFO:aiohttp.access:192.168.1.107 [12/Oct/2019:10:38:39 +0000] "GET /register HTTP/1.0" 200 6692 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0"
+INFO:root:create database connection pools...
+INFO:root:init jinja2..
+INFO:root:set jinja2 templates path: /var/log/nginx/template
+INFO:root:add routes:handlers
+INFO:root:found model: User (tables: users)
+INFO:root:found mapping: id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: email ==> <StringField, varchar(50):None>
+INFO:root:found mapping: passwd ==> <StringField, varchar(50):None>
+INFO:root:found mapping: admin ==> <BooleanField, boolean:None>
+INFO:root:found mapping: name ==> <StringField, varchar(50):None>
+INFO:root:found mapping: image ==> <StringField, varchar(500):None>
+INFO:root:found mapping: create_at ==> <FloatField, real:None>
+INFO:root:found model: Blog (tables: blogs)
+INFO:root:found mapping: id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_name ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_image ==> <StringField, varchar(500):None>
+INFO:root:found mapping: name ==> <StringField, varchar(50):None>
+INFO:root:found mapping: summary ==> <StringField, varchar(200):None>
+INFO:root:found mapping: context ==> <TextField, text:None>
+INFO:root:found mapping: create_at ==> <FloatField, real:None>
+INFO:root:found model: Comment (tables: comments)
+INFO:root:found mapping: id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: blog_id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_name ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_image ==> <StringField, varchar(500):None>
+INFO:root:found mapping: context ==> <TextField, text:None>
+INFO:root:found mapping: create_at ==> <FloatField, real:None>
+INFO:root:add route POST /api/blogs =>api_create_blog(request name summary content)
+INFO:root:add route GET /api/blogs/{id} =>api_get_blog(id)
+INFO:root:add route POST /api/users =>api_register_user(email name passwd)
+INFO:root:add route POST /api/authenticate =>authenticate(email passwd)
+INFO:root:add route GET /blog/{id} =>get_blog(id)
+INFO:root:add route GET /index/ =>hello(request)
+INFO:root:add route GET / =>index(request)
+INFO:root:add route GET /manager/blogs/create =>manage_create_blog()
+INFO:root:add route GET /register =>register()
+INFO:root:add route GET /signin =>signin()
+INFO:root:add route GET /signout =>signout(request)
+INFO:root:add static static => /home/skystar/devops/devops_django/www/static
+INFO:root:server start at http://192.168.1.107:8888
+INFO:root:received request: GET /register
+INFO:root:response handler:
+INFO:root:call with args: {}
+ERROR:aiohttp.server:Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/aiohttp/web_protocol.py", line 419, in start
+    resp = await task
+  File "/usr/local/lib/python3.7/site-packages/aiohttp/web_app.py", line 458, in _handle
+    resp = await handler(request)
+  File "/usr/local/lib/python3.7/site-packages/aiohttp/web_middlewares.py", line 119, in impl
+    return await handler(request)
+  File "/home/skystar/devops/devops_django/www/app.py", line 46, in logger
+    return (await handler(request))
+  File "/home/skystar/devops/devops_django/www/app.py", line 87, in response
+    resp = web.Response(body=app['__templating__'].get_template(template).render(**r).encode('utf-8'))
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/usr/local/lib/python3.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/usr/local/lib/python3.7/site-packages/jinja2/loaders.py", line 171, in get_source
+    f = open_if_exists(filename)
+  File "/usr/local/lib/python3.7/site-packages/jinja2/utils.py", line 154, in open_if_exists
+    return open(filename, mode)
+PermissionError: [Errno 13] Permission denied: '/var/log/nginx/template/register.html'
+INFO:aiohttp.access:192.168.1.107 [12/Oct/2019:10:43:28 +0000] "GET /register HTTP/1.0" 500 315 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0"
+INFO:root:create database connection pools...
+INFO:root:init jinja2..
+INFO:root:set jinja2 templates path: /var/log/nginx/template
+INFO:root:add routes:handlers
+INFO:root:found model: User (tables: users)
+INFO:root:found mapping: id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: email ==> <StringField, varchar(50):None>
+INFO:root:found mapping: passwd ==> <StringField, varchar(50):None>
+INFO:root:found mapping: admin ==> <BooleanField, boolean:None>
+INFO:root:found mapping: name ==> <StringField, varchar(50):None>
+INFO:root:found mapping: image ==> <StringField, varchar(500):None>
+INFO:root:found mapping: create_at ==> <FloatField, real:None>
+INFO:root:found model: Blog (tables: blogs)
+INFO:root:found mapping: id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_name ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_image ==> <StringField, varchar(500):None>
+INFO:root:found mapping: name ==> <StringField, varchar(50):None>
+INFO:root:found mapping: summary ==> <StringField, varchar(200):None>
+INFO:root:found mapping: context ==> <TextField, text:None>
+INFO:root:found mapping: create_at ==> <FloatField, real:None>
+INFO:root:found model: Comment (tables: comments)
+INFO:root:found mapping: id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: blog_id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_name ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_image ==> <StringField, varchar(500):None>
+INFO:root:found mapping: context ==> <TextField, text:None>
+INFO:root:found mapping: create_at ==> <FloatField, real:None>
+INFO:root:add route POST /api/blogs =>api_create_blog(request name summary content)
+INFO:root:add route GET /api/blogs/{id} =>api_get_blog(id)
+INFO:root:add route POST /api/users =>api_register_user(email name passwd)
+INFO:root:add route POST /api/authenticate =>authenticate(email passwd)
+INFO:root:add route GET /blog/{id} =>get_blog(id)
+INFO:root:add route GET /index/ =>hello(request)
+INFO:root:add route GET / =>index(request)
+INFO:root:add route GET /manager/blogs/create =>manage_create_blog()
+INFO:root:add route GET /register =>register()
+INFO:root:add route GET /signin =>signin()
+INFO:root:add route GET /signout =>signout(request)
+INFO:root:add static static => /home/skystar/devops/devops_django/www/static
+INFO:root:server start at http://192.168.1.107:8888
+INFO:root:received request: GET /register
+INFO:root:response handler:
+INFO:root:call with args: {}
+ERROR:aiohttp.server:Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/aiohttp/web_protocol.py", line 419, in start
+    resp = await task
+  File "/usr/local/lib/python3.7/site-packages/aiohttp/web_app.py", line 458, in _handle
+    resp = await handler(request)
+  File "/usr/local/lib/python3.7/site-packages/aiohttp/web_middlewares.py", line 119, in impl
+    return await handler(request)
+  File "/home/skystar/devops/devops_django/www/app.py", line 46, in logger
+    return (await handler(request))
+  File "/home/skystar/devops/devops_django/www/app.py", line 87, in response
+    resp = web.Response(body=app['__templating__'].get_template(template).render(**r).encode('utf-8'))
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/usr/local/lib/python3.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/usr/local/lib/python3.7/site-packages/jinja2/loaders.py", line 171, in get_source
+    f = open_if_exists(filename)
+  File "/usr/local/lib/python3.7/site-packages/jinja2/utils.py", line 154, in open_if_exists
+    return open(filename, mode)
+PermissionError: [Errno 13] Permission denied: '/var/log/nginx/template/register.html'
+INFO:aiohttp.access:192.168.1.107 [12/Oct/2019:10:51:07 +0000] "GET /register HTTP/1.0" 500 315 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0"
+INFO:root:create database connection pools...
+INFO:root:init jinja2..
+INFO:root:set jinja2 templates path: /home/skystar/devops/devops_django/www/template
+INFO:root:add routes:handlers
+INFO:root:found model: User (tables: users)
+INFO:root:found mapping: id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: email ==> <StringField, varchar(50):None>
+INFO:root:found mapping: passwd ==> <StringField, varchar(50):None>
+INFO:root:found mapping: admin ==> <BooleanField, boolean:None>
+INFO:root:found mapping: name ==> <StringField, varchar(50):None>
+INFO:root:found mapping: image ==> <StringField, varchar(500):None>
+INFO:root:found mapping: create_at ==> <FloatField, real:None>
+INFO:root:found model: Blog (tables: blogs)
+INFO:root:found mapping: id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_name ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_image ==> <StringField, varchar(500):None>
+INFO:root:found mapping: name ==> <StringField, varchar(50):None>
+INFO:root:found mapping: summary ==> <StringField, varchar(200):None>
+INFO:root:found mapping: context ==> <TextField, text:None>
+INFO:root:found mapping: create_at ==> <FloatField, real:None>
+INFO:root:found model: Comment (tables: comments)
+INFO:root:found mapping: id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: blog_id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_id ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_name ==> <StringField, varchar(50):None>
+INFO:root:found mapping: user_image ==> <StringField, varchar(500):None>
+INFO:root:found mapping: context ==> <TextField, text:None>
+INFO:root:found mapping: create_at ==> <FloatField, real:None>
+INFO:root:add route POST /api/blogs =>api_create_blog(request name summary content)
+INFO:root:add route GET /api/blogs/{id} =>api_get_blog(id)
+INFO:root:add route POST /api/users =>api_register_user(email name passwd)
+INFO:root:add route POST /api/authenticate =>authenticate(email passwd)
+INFO:root:add route GET /blog/{id} =>get_blog(id)
+INFO:root:add route GET /index/ =>hello(request)
+INFO:root:add route GET / =>index(request)
+INFO:root:add route GET /manager/blogs/create =>manage_create_blog()
+INFO:root:add route GET /register =>register()
+INFO:root:add route GET /signin =>signin()
+INFO:root:add route GET /signout =>signout(request)
+INFO:root:add static static => /home/skystar/devops/devops_django/www/static
+INFO:root:server start at http://192.168.1.107:8888
+INFO:root:received request: GET /register
+INFO:root:response handler:
+INFO:root:call with args: {}
+INFO:aiohttp.access:192.168.1.107 [12/Oct/2019:10:59:45 +0000] "GET /register HTTP/1.0" 200 6692 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0"

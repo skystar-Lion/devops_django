@@ -1,1 +1,2 @@
-first start
+mysql> update user set authentication_string = password('Linux@163'), password_expired = 'N' where user='root';
+
